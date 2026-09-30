@@ -1,0 +1,61 @@
+[size=5][b]Easy Steer[/b][/size]
+[b]One-Stick Movement and Auto-Follow Camera[/b]
+
+Steer your character. Let the camera follow.
+
+Easy Steer lets you explore Skyrim with WASD or one movement stick. Left and right turn your character, forward and back move along that heading, and the third-person camera follows smoothly. First person uses the same steering with its normal direct view.
+
+[b]How it plays[/b]
+[list]
+[*]A/D or left-stick X turns your character, including while standing still.
+[*]W/S or left-stick Y moves forward and backward.
+[*]Hold forward and turn together to move along a curved path.
+[*]Release movement to keep your new facing. The third-person camera finishes settling behind you.
+[*]Both perspectives are enabled by default. Switch either back to normal controls independently.
+[/list]
+
+These are classic tank-style controls: left/right replaces strafing while steering is enabled. Keyboard movement remappings are respected. Mouse and right-stick look remain available, with configurable override behaviour in third person.
+
+[b]Weapons and aiming[/b]
+Steering works with weapons drawn. Active bow/crossbow aiming and directed spell casting temporarily restore normal movement and camera controls. Existing combat mechanics and animations are used; Easy Steer does not add target lock or auto-aim. Precision aiming and vertical look may still require the mouse or right stick.
+
+[b]Requirements[/b]
+[list]
+[*]Windows x64 Skyrim Special Edition / Anniversary Edition.
+[*][url=https://skse.silverlock.org/]SKSE64[/url] matching your game executable.
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/32444]Address Library for SKSE Plugins[/url] matching your runtime.
+[/list]
+Gameplay tested by the author on Steam Skyrim 1.7.104.0. Other SE/AE runtimes are not independently validated. Skyrim VR and original Skyrim are not supported. No ESP/ESL, Papyrus, SkyUI, MCM or animation framework is needed.
+
+[b]Installation[/b]
+[list=1]
+[*]Close Skyrim and install the requirements above.
+[*]Install the Easy Steer main archive through Vortex or Mod Organizer 2.
+[*]Enable it, deploy in Vortex, and launch Skyrim through SKSE.
+[/list]
+For manual installation, copy the archive's SKSE folder into Skyrim's Data folder. No ESP needs enabling.
+
+[b]Upgrading from Auto-Follow Camera[/b]
+Disable/uninstall the old mod and deploy its removal before enabling Easy Steer. AutoFollowCamera.dll must no longer be present in Data/SKSE/Plugins. Easy Steer refuses to enable while the old DLL remains, preventing duplicate steering. Copy custom settings from the old INI into EasySteer.ini.
+
+[b]Configuration[/b]
+In Vortex, open the mod's staging folder and edit SKSE/Plugins/EasySteer.ini. Deploy and restart Skyrim after editing.
+
+[code][EasySteer]
+TankControls=true
+FirstPersonSteering=true
+ThirdPersonSteering=true
+TurnSpeed=120.0[/code]
+
+Set FirstPersonSteering=false for normal first-person controls. Set ThirdPersonSteering=false for normal third-person controls and camera behaviour. These switches are independent; keep TankControls=true when using them.
+
+Other settings control turn speed, controller deadzone, third-person follow speed, optional pitch, manual-look override and an optional recenter key. First person has no trailing camera lag. The included README explains every setting.
+
+[b]Compatibility and limitations[/b]
+Easy Steer changes movement input and camera rotation. Compatibility with True Directional Movement, SmoothCam and other movement/camera overhauls is not established; competing controllers may conflict. Steering is suspended in menus, dialogue, mounts, scripted camera states and incapacitation. It simplifies navigation rather than replacing every input needed to play Skyrim.
+
+[b]Troubleshooting[/b]
+Check EasySteer.log under Documents/My Games/Skyrim Special Edition/SKSE. For a bug report, enable DebugLogging in the INI, restart, reproduce the issue and include the log, runtime version, input device and relevant mods. Turn diagnostics off afterward.
+
+[b]Credits[/b]
+Created by mlw05. Built with SKSE and CommonLibSSE-NG. Third-party notices are included in the download. The thumbnail is AI-generated promotional artwork, not a gameplay screenshot.

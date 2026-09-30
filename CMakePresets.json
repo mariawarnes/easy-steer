@@ -1,0 +1,31 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "plugin",
+      "displayName": "SKSE plugin (Visual Studio x64)",
+      "binaryDir": "${sourceDir}/build/plugin",
+      "architecture": "x64",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-static-md",
+        "AFC_BUILD_PLUGIN": "ON",
+        "AFC_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "tests",
+      "displayName": "Portable core tests (no SKSE dependencies)",
+      "binaryDir": "${sourceDir}/build/tests",
+      "cacheVariables": {"AFC_BUILD_PLUGIN": "OFF", "AFC_BUILD_TESTS": "ON"}
+    }
+  ],
+  "buildPresets": [
+    {"name": "plugin", "configurePreset": "plugin", "configuration": "Release"},
+    {"name": "tests", "configurePreset": "tests", "configuration": "Release"}
+  ],
+  "testPresets": [
+    {"name": "plugin", "configurePreset": "plugin", "configuration": "Release", "output": {"outputOnFailure": true}},
+    {"name": "tests", "configurePreset": "tests", "configuration": "Release", "output": {"outputOnFailure": true}}
+  ]
+}

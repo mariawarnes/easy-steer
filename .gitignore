@@ -1,0 +1,9 @@
+.deps/
+vcpkg_installed/
+build/
+dist/
+backups/
+.vs/
+CMakeUserPresets.json
+*.user
+.codex-remote-attachments/
