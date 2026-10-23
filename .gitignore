@@ -7,3 +7,5 @@ backups/
 CMakeUserPresets.json
 *.user
 .codex-remote-attachments/
+
+chat-release-*/
